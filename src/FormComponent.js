@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Field } from 'react-final-form';
 import {func} from 'prop-types';
 import { gameSettingsContext } from './GameInDots';
+import { buttonTypeContext } from './LeftPartGame';
 import SelectField from './SelectField';
 import getGameSettingsForSelect from './helpers/getGameSettingsForSelect';
 
@@ -9,8 +10,7 @@ const FormComponent = (props) => {
 
     const { handleSubmit } = props;
     const gameSettings = useContext(gameSettingsContext);
-
-    console.log(getGameSettingsForSelect(gameSettings));
+    const buttonType = useContext(buttonTypeContext);
 
     return (
         <form className="form-body" onSubmit={handleSubmit}>
@@ -47,7 +47,7 @@ const FormComponent = (props) => {
             </div>
             <div className="submit-button-box box">
                 <button type="submit">
-                    Play
+                    { buttonType.toUpperCase() }
                 </button>
             </div>
         </form>
@@ -56,7 +56,6 @@ const FormComponent = (props) => {
 
 FormComponent.propTypes = {
     handleSubmit: func.isRequired,
-    // formValues: object.isRequired,
     formOnChange: func.isRequired,
 };
 

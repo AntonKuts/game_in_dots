@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 10px 20px;
 }
 
 .left-part-game {
@@ -54,3 +55,21 @@ span {
 .submit-button-box button {
   width: 120px;
 }
+
+.playing-field {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid grey;
+}
+
+.empty-field {
+
+}
+
+.active-field{
+    background-color: aqua;
+}
+
+

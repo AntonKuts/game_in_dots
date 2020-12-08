@@ -16,8 +16,6 @@ const GameInDots = () => {
         getData(gameSettingsUrl, setGameSettings);
     }, []);
 
-    console.log('winners -- ', winners);
-
     return (
         <gameSettingsContext.Provider value={gameSettings}>
             <div className="game-in-dots">

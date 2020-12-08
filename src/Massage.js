@@ -1,18 +1,18 @@
 import React from 'react';
-import {string} from "prop-types";
+import { string } from "prop-types";
 
-const Massege = ({ massageText }) => (
+const Massage = ({ massageText }) => (
         <div className="massage-text">
-            <p> { massageText } </p>
+            <h2> { massageText } </h2>
         </div>
     );
 
-Massege.propTypes = {
+Massage.propTypes = {
     massageText: string,
 };
 
-Massege.defaultProps = {
+Massage.defaultProps = {
     massageText: '',
 };
 
-export default Massege;
+export default Massage;

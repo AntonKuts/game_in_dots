@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const getData =(url, func)=> {
+const getData =( url, func )=> {
     axios.get(url)
-        .then( (response) => {
+        .then( ( response ) => {
             func(response.data);
         })
-        .catch( () => {
-            func([]);
+        .catch( ( error ) => {
+            func(console.log('error in getData ', error));
         })
 };
 

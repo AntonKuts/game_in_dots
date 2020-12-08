@@ -1,14 +1,12 @@
 import React from 'react';
 import { Form } from 'react-final-form';
 import FormComponent from './FormComponent';
-import {object} from "prop-types";
+import { func } from "prop-types";
 import formValidate from './helpers/formValidate';
 
-const FormContainer =()=> {
+const FormContainer =(props)=> {
 
-    const submitForm =(formValues)=> {
-        console.log('submit values -- ', formValues);
-    };
+    const { submitForm } = props;
 
     return (
         <Form
@@ -28,7 +26,10 @@ const FormContainer =()=> {
 
 
 FormComponent.propTypes = {
-    formValues: object.isRequired,
+    submitForm: func.isRequired,
 };
 
+FormComponent.defaultProps = {
+    submitForm: ()=>{},
+};
 export default FormContainer;
