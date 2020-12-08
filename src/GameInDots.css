@@ -1,0 +1,87 @@
+.gameInDots {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  width: 100%;
+  max-width: 900px;
+  border: 2px solid grey;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.header{
+  width: 100%;
+  border-bottom: 2px solid grey;
+  text-align: center;
+}
+
+.header_title {
+  font-size: 12px;
+}
+
+.form-body {
+  padding: 20px;
+}
+
+.box {
+  padding-bottom: 20px;
+}
+
+.box-title {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.projects-title-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+}
+
+.project-title-box {
+  margin-right: 20px;
+  border: 2px solid grey;
+  width: 100px;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.project_title_text {
+  margin: 5px;
+}
+
+.project-box{
+  border: 2px dotted grey;
+  margin-bottom: 10px;
+}
+
+.project-item {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+}
+
+.project-item-tittle {
+   width: 100px;
+   margin: 10px 20px 10px 0;
+ }
+
+.project-item-value {
+  margin: 10px;
+}
+
+.delete-project{
+  cursor: pointer;
+}
+
+
