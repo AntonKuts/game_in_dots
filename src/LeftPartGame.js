@@ -1,21 +1,16 @@
 import React from 'react';
 import FormContainer from './FormContainer';
-import {object} from "prop-types";
-import FormComponent from "./FormComponent";
+import Massage from './Massage';
 
 const LeftPartGame = () => {
 
     return (
-        <div className="leftPartGame">
+        <div className="left-part-game">
            <FormContainer />
-           {/* <Message /> */}
+            <Massage massageText="text" />
            {/* <playingField /> */}
         </div>
     )
-};
-
-FormComponent.propTypes = {
-    gameSettings: object.isRequired,
 };
 
 export default LeftPartGame;

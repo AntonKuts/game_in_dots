@@ -1,17 +1,13 @@
 import React from 'react';
 import { Form } from 'react-final-form';
 import FormComponent from './FormComponent';
-// import { getStartData } from './startData';
-import {func, object} from "prop-types";
+import {object} from "prop-types";
+import formValidate from './helpers/formValidate';
 
 const FormContainer =()=> {
 
     const submitForm =(formValues)=> {
         console.log('submit values -- ', formValues);
-    };
-
-    const formValidate =()=> {
-        // validate here
     };
 
     return (

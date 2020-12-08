@@ -11,6 +11,7 @@ const SelectField = (props) => {
                 <option
                     key={`${option.value}${index}`}
                     value={option.value}
+                    // disabled={option.isDisabled}
                 >
                     {option.text}
                 </option>

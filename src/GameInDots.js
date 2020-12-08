@@ -20,7 +20,7 @@ const GameInDots = () => {
 
     return (
         <gameSettingsContext.Provider value={gameSettings}>
-            <div className="gameInDots">
+            <div className="game-in-dots">
                 <LeftPartGame />
                 {/* <RightPartBoard /> */}
             </div>
