@@ -20,6 +20,14 @@ const PlayingField = (props) => {
     const widthMainFieldFromSquareNumbers = (field * widthAndHeightField) + (field * (borderBrWidth * 2));
     // ex: Field 5 --> 125 + 20 = 145;
 
+    const startTimer =()=> {
+        const timer = setTimeout(timeIsOver, delay);
+    };
+
+    const timeIsOver =()=> {
+        console.log('timeIsOver!');
+    };
+
     const fieldStyle = {
         width: `${widthAndHeightField}px`,
         height: `${widthAndHeightField}px`,
@@ -37,6 +45,7 @@ const PlayingField = (props) => {
                         key={index}
                         delay={delay}
                         fieldStyle={fieldStyle}
+                        startTimer={startTimer}
                         clickOnActiveField={clickOnActiveField}
                     />
                 : (

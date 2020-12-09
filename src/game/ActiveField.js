@@ -3,31 +3,28 @@ import {number, func, object} from 'prop-types';
 import {delayColorDisplay} from "../constants";
 
 const ActiveField = (props) => {
-    const { clickOnActiveField, fieldStyle, delay } = props;
+    const { clickOnActiveField, fieldStyle, startTimer } = props;
 
     const [ backgroundColor, setBackgroundColor ] = useState('aqua');
 
     const clickOnActiveFieldNextStep = (actor) => {
         setBackgroundColor('aqua');
         clickOnActiveField(actor);
+
     };
 
     const clickOnActiveFieldStart = () => {
         setBackgroundColor('green');
-        clearTimeout(timer);
         setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, '');
     };
 
     const timeIsOver = () => {
         console.log('timeIsOver!!');
         setBackgroundColor('red');
-        clearTimeout(timer);
         setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, 'Computer');
     };
 
     const activeStyle = {...fieldStyle, backgroundColor: backgroundColor};
-
-    const timer = setTimeout(timeIsOver, delay); // wrong
 
     return (
         <div
