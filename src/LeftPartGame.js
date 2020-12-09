@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import FormContainer from './form/FormContainer';
 import Massage from './Massage';
 import PlayingField from './game/PlayingField';
+import getNewDate from "./helpers/getNewDate";
+import { func } from "prop-types";
 
 export const buttonTypeContext = React.createContext('play');
 
-const LeftPartGame = () => {
+const LeftPartGame = ({ readyToPostData }) => {
 
     const [name, setName] = useState('');
     const [field, setField] = useState(0);
@@ -50,6 +52,11 @@ const LeftPartGame = () => {
     const Win =(winner)=> {
         clearAll();
         setMassageText(`${winner} is WIN!`);
+        const dataToPost = {
+            winner: winner,
+            date: getNewDate()
+        };
+        readyToPostData(dataToPost);
     };
 
     const clearAll =()=>{
@@ -80,6 +87,14 @@ const LeftPartGame = () => {
             </div>
         </buttonTypeContext.Provider>
     )
+};
+
+LeftPartGame.propTypes = {
+    LeftPartGame: func.isRequired,
+};
+
+LeftPartGame.defaultProps = {
+    LeftPartGame: ()=>{},
 };
 
 export default LeftPartGame;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LeftPartGame from './LeftPartGame';
 import RightPartBoard from './RightPartBoard';
 import getData from "./axios/getData";
+import postData from "./axios/postData";
 import { winnerUrl, gameSettingsUrl } from './constants';
 import './css/GameInDots.css';
 
@@ -17,12 +18,16 @@ const GameInDots = () => {
         getData(gameSettingsUrl, setGameSettings);
     }, []);
 
+    const readyToPostData =(dataToPost)=>{
+        postData(winnerUrl, setWinners, dataToPost);
+    };
+
     return (
         <gameSettingsContext.Provider value={gameSettings}>
             <div className="game-in-dots">
-                <LeftPartGame />
+                <LeftPartGame readyToPostData={readyToPostData} />
                 {winners?.length
-                    ? <RightPartBoard winners={winners}/>
+                    ? <RightPartBoard winners={winners} />
                     : ''}
 
             </div>

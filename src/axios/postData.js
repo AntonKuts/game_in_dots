@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const getData =( url, func )=> {
-    axios.get(url)
-        .then( ( response ) => {
+const getData =( url, func, dataToPost )=> {
+    axios.post(url, dataToPost)
+        .then( (response) => {
             func(response.data);
         })
         .catch( ( error ) => {

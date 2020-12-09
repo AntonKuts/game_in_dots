@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Field } from 'react-final-form';
-import {func} from 'prop-types';
+import { func } from 'prop-types';
 import { gameSettingsContext } from '../GameInDots';
 import { buttonTypeContext } from '../LeftPartGame';
 import SelectField from './SelectField';
