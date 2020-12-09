@@ -6,32 +6,53 @@
   border: 2px solid grey;
   display: flex;
   text-align: center;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: self-start;
   margin: 0 auto;
-  padding: 10px 20px;
 }
 
 .left-part-game {
-  width: 50%;
+  min-width: 70%;
+}
+
+.right-part-board {
+  min-width: 24%;
+}
+
+.part{
   display: flex;
   text-align: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding: 10px;
+}
+
+.winner {
+  width: 90%;
+  background-color: darkgrey;
+  color: grey;
+  display: flex;
+  text-align: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 10px;
+  margin-bottom: 4px;
 }
 
 .form-body{
+  width: 100%;
   display: flex;
   text-align: center;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .box {
-  margin: 20px;
+  margin: 5px 10px;
 }
 
 span {
@@ -43,13 +64,12 @@ span {
 }
 
 .box {
-   width: 150px;
-   height: 22px;
- }
+  width: 150px;
+  height: 22px;
+}
 
 .box select {
   width: 150px;
-  height: 22px;
 }
 
 .submit-button-box button {
@@ -57,19 +77,10 @@ span {
 }
 
 .playing-field {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid grey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid grey;
 }
-
-.empty-field {
-
-}
-
-.active-field{
-    background-color: aqua;
-}
-
 

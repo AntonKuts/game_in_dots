@@ -13,13 +13,18 @@ const PlayingField = (props) => {
         clickOnActiveField
     }= props;
 
+    if (field < 4 || field > 15 || delay < 900 || delay > 5000) return ''; //
+
     const squareNumbers = [...[...[...Array(numberOfFields).keys()]]]; // 25 --> 1, 2, 3, 4 ....
     const activeFieldQueue = [...squareNumbers].sort( () => 0.5-Math.random()); // 25 --> 10, 3, 5, 8 ....
-
-    if (field < 4 || delay < 900 || field > 15) return ''; //
-
     const widthMainFieldFromSquareNumbers = (field * widthAndHeightField) + (field * (borderBrWidth * 2));
-    // ex: Field 5 --> 250 + 20 = 270;
+    // ex: Field 5 --> 125 + 20 = 145;
+
+    const fieldStyle = {
+        width: `${widthAndHeightField}px`,
+        height: `${widthAndHeightField}px`,
+        border: `${borderBrWidth}px solid grey`,
+    };
 
     return (
         <div
@@ -28,15 +33,17 @@ const PlayingField = (props) => {
         >
             { squareNumbers.map((index) =>
                 index === activeFieldQueue[step] // position of ActiveField
-                ? <ActiveField key={index} clickOnActiveField={clickOnActiveField} />
+                ? <ActiveField
+                        key={index}
+                        fieldStyle={fieldStyle}
+                        clickOnActiveField={clickOnActiveField}
+                        delay={delay}
+                    />
                 : (
                     <div
                         key={index}
                         className="empty-field"
-                        style={{
-                            width: `${widthAndHeightField}px`,
-                            height: `${widthAndHeightField}px`,
-                            border: `${borderBrWidth}px solid grey`}}
+                        style={fieldStyle}
                     />
                 )
             )}

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import LeftPartGame from './LeftPartGame';
-import './GameInDots.css';
+import RightPartBoard from './RightPartBoard';
 import getData from "./axios/getData";
 import { winnerUrl, gameSettingsUrl } from './constants';
+import './GameInDots.css';
 
 export const gameSettingsContext = React.createContext('');
 
@@ -20,7 +21,10 @@ const GameInDots = () => {
         <gameSettingsContext.Provider value={gameSettings}>
             <div className="game-in-dots">
                 <LeftPartGame />
-                {/* <RightPartBoard /> */}
+                {winners?.length
+                    ? <RightPartBoard winners={winners}/>
+                    : ''}
+
             </div>
         </gameSettingsContext.Provider>
     );
