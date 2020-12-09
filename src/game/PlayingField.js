@@ -1,6 +1,6 @@
 import React from 'react';
 import { number, func } from "prop-types";
-import { widthAndHeightField, borderBrWidth } from './constants';
+import { widthAndHeightField, borderBrWidth } from '../constants';
 import ActiveField from "./ActiveField";
 
 const PlayingField = (props) => {

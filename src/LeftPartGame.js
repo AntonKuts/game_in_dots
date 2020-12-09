@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FormContainer from './FormContainer';
+import FormContainer from './form/FormContainer';
 import Massage from './Massage';
-import PlayingField from './PlayingField';
+import PlayingField from './game/PlayingField';
 
 export const buttonTypeContext = React.createContext('play');
 

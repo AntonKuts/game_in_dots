@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {number, func, object} from 'prop-types';
-import { delayColorDisplay } from "./constants";
+import { delayColorDisplay } from "../constants";
 
 const ActiveField = (props) => {
 

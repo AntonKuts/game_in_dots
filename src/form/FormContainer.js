@@ -2,7 +2,7 @@ import React from 'react';
 import { Form } from 'react-final-form';
 import FormComponent from './FormComponent';
 import { func } from "prop-types";
-import formValidate from './helpers/formValidate';
+import formValidate from '../helpers/formValidate';
 
 const FormContainer =(props)=> {
 

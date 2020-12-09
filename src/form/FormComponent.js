@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Field } from 'react-final-form';
 import {func} from 'prop-types';
-import { gameSettingsContext } from './GameInDots';
-import { buttonTypeContext } from './LeftPartGame';
+import { gameSettingsContext } from '../GameInDots';
+import { buttonTypeContext } from '../LeftPartGame';
 import SelectField from './SelectField';
-import getGameSettingsForSelect from './helpers/getGameSettingsForSelect';
+import getGameSettingsForSelect from '../helpers/getGameSettingsForSelect';
 
 const FormComponent = (props) => {
 
