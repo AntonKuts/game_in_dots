@@ -17,15 +17,6 @@ const LeftPartGame = () => {
     const [buttonType, setButtonType] = useState('play');
     const numberOfFields = field * field;
 
-    const clearAll =()=>{
-        setField(0);
-        setDelay(0);
-        setStep(0);
-        setPlayerPoint(0);
-        setMassageText('');
-        setButtonType('Play Again');
-    };
-
     const submitForm =( formValues )=> {
         clearAll();
         setMassageText('Step 0');
@@ -38,9 +29,17 @@ const LeftPartGame = () => {
         setButtonType('Сancel');
     };
 
-    const Win =(winner)=> {
-        clearAll();
-        setMassageText(`${winner} is WIN!`);
+    const clickOnActiveField =(actor)=> {
+        if ( computerPoint + 1 > numberOfFields / 2 || playerPoint + 1 > numberOfFields / 2) {
+            Win(actor || name);
+        } else {
+            if (actor === 'Computer') {
+                setComputerPoint(computerPoint + 1);
+            } else {
+                setPlayerPoint(playerPoint + 1);
+            }
+            nextStep();
+        }
     };
 
     const nextStep =()=> {
@@ -48,23 +47,18 @@ const LeftPartGame = () => {
         setMassageText(`Step ${step + 1} ${playerPoint}/${computerPoint}`);
     };
 
-    const clickOnActiveField =(actor)=> {
-        console.log('actor --- ', actor);
-        if (actor === 'computer') {
-            if ( computerPoint + 1 > numberOfFields / 2) {
-                Win(actor);
-            } else {
-                setComputerPoint(computerPoint + 1);
-                nextStep();
-            }
-        } else {
-            if ( playerPoint + 1 > numberOfFields / 2) {
-                Win(name);
-            } else {
-                setPlayerPoint(playerPoint + 1);
-                nextStep();
-            }
-        }
+    const Win =(winner)=> {
+        clearAll();
+        setMassageText(`${winner} is WIN!`);
+    };
+
+    const clearAll =()=>{
+        setField(0);
+        setDelay(0);
+        setStep(0);
+        setPlayerPoint(0);
+        setMassageText('');
+        setButtonType('Play Again');
     };
 
     return (

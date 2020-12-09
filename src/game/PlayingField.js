@@ -32,12 +32,12 @@ const PlayingField = (props) => {
             style={{ width: `${widthMainFieldFromSquareNumbers}px`}}
         >
             { squareNumbers.map((index) =>
-                index === activeFieldQueue[step] // position of ActiveField
+                index === activeFieldQueue[step] // position of Active Field
                 ? <ActiveField
                         key={index}
+                        delay={delay}
                         fieldStyle={fieldStyle}
                         clickOnActiveField={clickOnActiveField}
-                        delay={delay}
                     />
                 : (
                     <div
@@ -56,7 +56,7 @@ PlayingField.propTypes = {
     field: number,
     delay: number,
     numberOfFields: number,
-    clickOnActiveField: func,
+    clickOnActiveFieldStart: func,
 };
 
 PlayingField.defaultProps = {
@@ -64,7 +64,7 @@ PlayingField.defaultProps = {
     field: 0,
     delay: 0,
     numberOfFields: 0,
-    clickOnActiveField: ()=>{},
+    clickOnActiveFieldStart: ()=>{},
 };
 
 export default PlayingField;

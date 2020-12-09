@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import {number, func, object} from 'prop-types';
-import { delayColorDisplay } from "../constants";
+import {delayColorDisplay} from "../constants";
 
 const ActiveField = (props) => {
-
     const { clickOnActiveField, fieldStyle, delay } = props;
 
     const [ backgroundColor, setBackgroundColor ] = useState('aqua');
@@ -15,19 +14,20 @@ const ActiveField = (props) => {
 
     const clickOnActiveFieldStart = () => {
         setBackgroundColor('green');
-        setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, 'user');
+        clearTimeout(timer);
+        setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, '');
     };
 
     const timeIsOver = () => {
-        console.log('computer go');
+        console.log('timeIsOver!!');
         setBackgroundColor('red');
-        setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, 'computer');
+        clearTimeout(timer);
+        setTimeout(clickOnActiveFieldNextStep, delayColorDisplay, 'Computer');
     };
-
-    setTimeout(timeIsOver, delay); // wrong
 
     const activeStyle = {...fieldStyle, backgroundColor: backgroundColor};
 
+    const timer = setTimeout(timeIsOver, delay); // wrong
 
     return (
         <div
