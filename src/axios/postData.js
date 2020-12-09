@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const getData =( url, func, dataToPost )=> {
+const postData =( url, func, dataToPost )=> {
     axios.post(url, dataToPost)
         .then( (response) => {
             func(response.data);
         })
         .catch( ( error ) => {
-            console.log('error in getData ', error);
+            console.log('error in postData ', error);
         })
 };
 
-export default getData;
+export default postData;
