@@ -3,7 +3,7 @@ import LeftPartGame from './LeftPartGame';
 import RightPartBoard from './RightPartBoard';
 import getData from "./axios/getData";
 import { winnerUrl, gameSettingsUrl } from './constants';
-import './GameInDots.css';
+import './css/GameInDots.css';
 
 export const gameSettingsContext = React.createContext('');
 
